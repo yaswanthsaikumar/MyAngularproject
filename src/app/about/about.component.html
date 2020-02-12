@@ -1,0 +1,71 @@
+<label style="float: left;color:blue">Welcome {{user }}</label>
+<div>
+<br><br>
+<button type="submit" stytle="position: absolute; right: 0;" name="submit"(click)="logout()">logout</button>
+<button  stytle="position: absolute; right: -10;" name="submit"(click)="Getusers()">Getusers</button>
+<div *ngIf="!toggle">
+    <ul *ngFor=" let u of this.mservice.messages">
+      <li>{{u}}</li></ul>
+</div>
+<button  stytle="position: absolute; right: 0;" name="submit"(click)="Deleteusers()">DeleteUsers</button>
+
+<form id="formwrap">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4" ><b>First Name</b></label>
+        <input type="firstname" class="form-control" id="inputEmail4" placeholder="First Name" ><strong id="red"> *</strong>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputLastname4" ><b>Last name</b></label>
+        <input type="text" class="form-control" id="inputLastname4" placeholder="Last Name"><strong id="red">*</strong>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress"><b>Address</b></label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"><strong id="red">*</strong>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"><label>(optional)</label>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <strong for="inputCity">City</strong>
+        <input type="text" class="form-control" id="inputCity"><strong id="red">*</strong>
+      </div>
+      <div class="form-group col-md-4">
+        <strong for="inputState">State</strong><strong id="red">*</strong>
+        <select id="inputState" class="form-control" name="stateselected" [(ngModel)]="stateselected">
+          <option selected>Choose...</option>
+          <option *ngFor="let s of state" [ngValue]="s.zip" >{{s.state | uppercase}}</option>
+        </select>
+        
+      </div>
+      <div class="form-group col-md-2">
+        <strong for="inputZip">Zip</strong>
+        <input  type="text" class="form-control" id="inputZip" placeholder="{{stateselected}}">
+        <strong id="red">*</strong>
+        
+      </div>
+    
+    <div class="custom-file">
+
+        
+        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <strong >Upload your Resume </strong><strong id="red">*</strong>
+        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+        <div class="invalid-feedback">Example invalid custom file feedback</div>
+      </div>
+    </div>
+    <br><br>
+
+
+    <label>Comment Box: </label>
+    <textarea name="comment" id="comments" placeholder="Description of your comment">
+        
+        </textarea>
+        <p>(optional)</p>
+        <br>
+        
+    <button type="submit"  class="btn btn-primary" id="button">Update</button>
+  </form>

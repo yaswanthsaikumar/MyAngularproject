@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body ng-app="">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+        <a href="#" class="navbar-brand">
+            <!-- Logo Image -->
+            <img src="assets/soch.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+            <!-- Logo Text -->
+            <span class="text-uppercase font-weight-bold">Go <br> For Great</span>
+        </a>
+  
+      <ul class="ucenter" id="table1" class="navbar-nav mr-auto">
+        <li class="nav-item active" id="display1">
+          <a class="nav-link" routerLink="/"><b>Home</b> </a>
+        </li>
+        <li class="nav-item active" id="display1" >
+          <a class="nav-link" routerLink="/login"><b>login</b></a>
+        </li>
+       
+        <li class="nav-item active" id="display1">
+          <a class="nav-link" routerLink="/register"><b>Register</b></a>
+        </li>
+        <li class="nav-item active" id="display1">
+          <a class="nav-link" routerLink="/about"><b>AboutYou</b></a>
+        </li>
+        <li class="nav-item active" id="display1">
+          <a class="nav-link" routerLink="/about"><b>Logout</b></a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Translate</button>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+  </nav>
+ 
+        <router-outlet></router-outlet>
+    

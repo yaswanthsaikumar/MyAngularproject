@@ -1,0 +1,34 @@
+<body>
+<div style=" text-align: center;color:red;font-style:italic;"> {{status}}  </div>
+<div style=" text-align: center;color:red;font-style:italic;"> {{status1}}  </div>
+   <form id="Wrapper">
+   	<div id="username_div">
+   	  <label>Username</label> <br>
+   	  <input type="text" name="username" class="textInput" [(ngModel)]="userName" #ctrlUsername='ngModel' required>
+		 <label *ngIf='ctrlUsername.invalid && (ctrlUsername.touched || ctrlUsername.dirty) ' style="color:red;">Required</label>
+		 
+   	</div>
+   	<div id="email_div">
+   	  <label>Email</label> <br>
+   	  <input type="email" name="email" class="textInput" [(ngModel)]="Email" #ctrlEmail='ngModel' required> 
+   	  <label *ngIf='ctrlEmail.invalid && (ctrlEmail.touched || ctrlEmail.dirty) ' style="color:red;">Required</label>
+   	</div>
+   	<div id="password_div">
+   	  <label>Password</label> <br>
+   	  <input type="password" name="password" class="textInput" [(ngModel)]="password">
+   	</div>
+   	<div id="pass_confirm_div">
+   	   <label>Password confirm</label> <br>
+   	   <input type="password" name="password_confirm" class="textInput" [(ngModel)]="password_confirm">
+   	   <div id="password_error"></div>
+   	</div>
+   	<div>
+     <input type="submit" name="submit" (click)="loginUser()" class="btn">
+     <p >  
+      Already a member ?
+      <a routerLink="/login">login</a>
+    </p>
+   	</div>
+   </form>
+ 
+</body>

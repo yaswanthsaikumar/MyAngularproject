@@ -1,0 +1,14 @@
+.ucenter {
+    list-style: none;
+    text-align: center;
+ }
+ #display1
+  {
+      display: inline-block;
+  }
+  #table1{
+    display: table; 
+    margin-left: auto;
+    margin-right: auto;
+
+}

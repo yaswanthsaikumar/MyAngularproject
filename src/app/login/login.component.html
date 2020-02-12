@@ -1,0 +1,33 @@
+<body>
+<form #f="ngForm" id="Wrapper">
+    <div id="username_div">
+      <label>Username</label> <br>
+      <input type="text" name="username" class="textInput" placeholder="username" [(ngModel)]="username" #ctrlUsername='ngModel' required >
+      <label *ngIf='ctrlUsername.invalid && (ctrlUsername.touched || ctrlUsername.dirty) ' style="color:red;">*Required</label>
+      <div id="name_error"></div>
+    </div>
+     
+    <div id="password_div">
+      <label>Password</label> <br>
+      <input type="password" name="password" class="textInput" placeholder="password" [(ngModel)]="password" #ctrlPassword='ngModel' required>
+      <label *ngIf='ctrlPassword.invalid && (ctrlPassword.touched || ctrlPassword.dirty) ' style="color:red;">*Required</label>
+    </div>
+    
+    <div>
+  <button type="submit"  name="submit" [disabled]="!f.valid" (click)="loginUser()" class="btn">submit</button>
+  <div style=" text-align: center;color:red;font-style:italic;"  > {{status1}}</div>
+  <p >  
+   Not a member ?
+   <a routerLink="/register">Register</a>
+ </p>
+    </div>
+    
+</form>
+</body>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<p class="fs">This is a trail login page for a simple application.
+  <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="YourSite">Tweet</a>
+  <a href="http://www.reddit.com/submit" onclick="window.location = 'http://www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"> <img src="http://www.reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /> </a>
+</p>
+
